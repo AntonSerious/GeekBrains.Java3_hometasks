@@ -136,20 +136,14 @@ public class hometask2 {
             }
             int[] res = pst1.executeBatch();
             conn.commit();
-            System.out.println("rows updated: " + res[0]);
-            System.out.println("SUCCESS_NO_INFO: " + res[1]);
-            System.out.println("EXECUTE_FAILED: " + res[2]);
-
-
+            System.out.println("rows updated: " + res[0]); //возвращает 1. Хотя реально модифицировано 3 строки
+            System.out.println("SUCCESS_NO_INFO: " + res[1]); //тоже возвращает 1
+            System.out.println("EXECUTE_FAILED: " + res[2]); //Тоже возвращает 1. Хотя апдейт удался. Все 3 записи были модифицированы.
             scanner.close();
 
         } catch (FileNotFoundException | SQLException e) {
             e.printStackTrace();
         }
-
-
-
-
 
         disconnect();
 
